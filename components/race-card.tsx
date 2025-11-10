@@ -30,8 +30,8 @@ export function RaceCard({ race, index, isPast = false }: RaceCardProps) {
       <Card
         className={`group overflow-hidden border-l-4 transition-all duration-300 ${
           isPast
-            ? 'border-l-rb-sky bg-gradient-to-r from-rb-sky/5 to-transparent'
-            : 'border-l-rb-yellow bg-gradient-to-r from-rb-yellow/5 to-transparent hover:shadow-lg hover:shadow-rb-yellow/20'
+            ? 'border-l-rb-sky bg-muted/30'
+            : 'border-l-rb-yellow bg-card hover:shadow-lg hover:border-rb-yellow'
         }`}
       >
         <CardContent className="p-6">
@@ -91,8 +91,7 @@ export function RaceCard({ race, index, isPast = false }: RaceCardProps) {
               <div className="flex items-center gap-2">
                 <Trophy className="h-4 w-4 text-rb-yellow" />
                 <span className="font-bold text-sm">
-                 {race.Circuit?.Location?.locality ?? 'Unknown'}, {race.Circuit?.Location?.country ?? 'Unknown'}
-
+                 {race.Results[0]?.Driver?.givenName ?? ''} {race.Results[0]?.Driver?.familyName ?? 'Unknown'}
                 </span>
               </div>
             </div>

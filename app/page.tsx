@@ -37,7 +37,7 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 text-white">
               ORACLE RED BULL
               <br />
-              <span className="bg-gradient-to-r from-rb-yellow via-rb-red to-rb-yellow bg-clip-text text-transparent">
+              <span className="text-rb-yellow">
                 RACING
               </span>
             </h1>
@@ -123,7 +123,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-br from-rb-navy to-rb-sky/20 dark:from-black dark:to-rb-navy/50">
+      <section className="py-20 bg-rb-navy dark:bg-black">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}

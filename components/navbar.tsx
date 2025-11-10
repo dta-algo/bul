@@ -39,10 +39,9 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <img src="/RBR.svg" alt="Red Bull Racing" className="w-20 h-30" />
-
           </Link>
 
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-2 absolute left-1/2 transform -translate-x-1/2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -56,7 +55,7 @@ export function Navbar() {
               >
                 {link.label}
                 {pathname === link.href && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-rb-yellow to-rb-red" />
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-rb-yellow" />
                 )}
               </Link>
             ))}

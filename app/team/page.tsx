@@ -1,11 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Suspense } from 'react';
-import { getConstructorStandings } from '@/lib/f1-api';
 import { SectionTitle } from '@/components/section-title';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import {
   Trophy,
   Users,
@@ -72,7 +69,7 @@ const teamValues = [
 export default function TeamPage() {
   return (
     <div className="min-h-screen bg-background">
-      <section className="relative py-20 bg-gradient-to-br from-rb-navy via-rb-navy/95 to-rb-sky/20 dark:from-rb-navy dark:via-black dark:to-rb-navy">
+      <section className="relative py-20 bg-rb-navy dark:bg-black">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -185,7 +182,7 @@ export default function TeamPage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-rb-navy to-rb-sky/20 dark:from-rb-navy/50 dark:to-black border-rb-yellow/20">
+            <Card className="bg-rb-navy dark:bg-rb-navy/50 border-rb-yellow/20">
               <CardContent className="p-8 text-white dark:text-gray-100">
                 <h3 className="text-2xl font-bold mb-4 text-rb-yellow">
                   Our Mission
@@ -203,7 +200,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-rb-navy to-rb-sky/20 dark:from-black dark:to-rb-navy/50">
+      <section className="py-20 bg-rb-navy dark:bg-black">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}

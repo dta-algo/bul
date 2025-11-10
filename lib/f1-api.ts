@@ -14,15 +14,16 @@ async function fetchF1(endpoint: string) {
    TYPES
 ===================================== */
 export interface DriverStanding {
-  position: string;
-  points: string;
-  wins: string;
+  position: string | null;
+  points: string | null;
+  wins: string | null;
   Driver: {
     driverId: string;
     code: string;
     givenName: string;
     familyName: string;
     nationality: string;
+    permanentNumber?: string;
   };
   Constructors: {
     constructorId: string;
@@ -73,6 +74,7 @@ export async function getRedBullDrivers() {
       givenName: d.givenName,
       familyName: d.familyName,
       nationality: d.nationality,
+      permanentNumber: d.permanentNumber,
     },
     position: null,
     points: null,
@@ -132,16 +134,27 @@ export async function getRaceSchedule(): Promise<Race[]> {
 /* =====================================
    ✅ GET RACE RESULTS (FINISHED RACES)
 ===================================== */
-export async function getRaceResults() {
+export async function getRaceResults(): Promise<Race[]> {
   const json = await fetchF1("/current/results.json");
   const races = json.MRData.RaceTable.Races || [];
 
   return races.map((r: any) => ({
+    season: r.season,
     round: r.round,
     raceName: r.raceName,
     date: r.date,
     time: r.time,
-    results: r.Results || [],
+    Results: r.Results || [],
+    Circuit: {
+      circuitId: r.Circuit.circuitId,
+      circuitName: r.Circuit.circuitName,
+      Location: {
+        lat: r.Circuit.Location.lat,
+        long: r.Circuit.Location.long,
+        locality: r.Circuit.Location.locality,
+        country: r.Circuit.Location.country,
+      },
+    },
   }));
 }
 

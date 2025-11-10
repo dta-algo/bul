@@ -23,11 +23,11 @@ export function DriverCard({ standing, index }: DriverCardProps) {
       whileHover={{ y: -8, scale: 1.02 }}
     >
       <Link href={`/drivers/${Driver.driverId}`}>
-        <Card className="group overflow-hidden border-2 border-transparent hover:border-rb-yellow transition-all duration-300 bg-gradient-to-br from-card to-card/50 backdrop-blur-sm">
+        <Card className="group overflow-hidden border-2 border-transparent hover:border-rb-yellow transition-all duration-300 bg-card">
           <CardContent className="p-6">
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center gap-3">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-rb-navy to-rb-sky text-white font-bold text-xl">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-rb-navy text-white font-bold text-xl">
                   {Driver.code || position}
                 </div>
                 <div>

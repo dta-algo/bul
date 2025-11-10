@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { getRedBullDrivers } from '@/lib/f1-api';
+import { getRedBullDrivers, DriverStanding } from '@/lib/f1-api';
 import { DriverCard } from '@/components/driver-card';
 import { SectionTitle } from '@/components/section-title';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -24,7 +24,7 @@ async function DriversList() {
 
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {drivers.map((driver, index) => (
+        {drivers.map((driver: DriverStanding, index: number) => (
           <DriverCard key={driver.Driver.driverId} standing={driver} index={index} />
         ))}
       </div>

@@ -15,7 +15,7 @@ export function SectionTitle({
     <div className="mb-12 text-center">
       <h2
         className={cn(
-          'text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-rb-navy via-rb-yellow to-rb-red bg-clip-text text-transparent',
+          'text-4xl md:text-5xl font-bold mb-4 text-rb-navy dark:text-rb-yellow',
           className
         )}
       >
